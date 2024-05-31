@@ -121,6 +121,54 @@ public class VentanaEmpleados {
             }
         });
 
+        calcularAntiguedadButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textArea2.setText("");
+                Fechas fechaActual = new Fechas(0, 0, 0).fechaActual();
+
+                for (Empleado emp : empleados) {
+                    int antiguedadMeses = emp.getFechaIngreso().tiempoFechas(emp.getFechaIngreso(), fechaActual);
+                    int antiguedadAnios = antiguedadMeses / 12;
+                    textArea2.append(emp.getNombreEmpleado() + ": " + antiguedadAnios + " años\n");
+                }
+            }
+        });
+
+        calcularFondosDeReservaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textArea3.setText("");
+
+                for (Empleado emp : empleados) {
+                    textArea3.append(emp.getNombreEmpleado() + ": " + emp.getFondosReserva() + "\n");
+                }
+            }
+        });
+
+
+        calcularAporteAlSeguroButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textArea4.setText("");
+
+                for (Empleado emp : empleados) {
+                    textArea4.append(emp.getNombreEmpleado() + ": " + emp.getAporteSeguro() + "\n");
+                }
+            }
+        });
+
+
+        calcularImpuestoALaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textArea5.setText("");
+
+                for (Empleado emp : empleados) {
+                    textArea5.append(emp.getNombreEmpleado() + ": " + emp.getImpuestoRenta() + "\n");
+                }
+            }
+        });
     }
 
     private void limpiar(){
