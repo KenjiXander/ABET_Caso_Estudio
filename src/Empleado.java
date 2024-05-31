@@ -23,7 +23,7 @@ public class Empleado implements Comparable<Empleado> {
         setAporteSeguro((getSueldo()*9.35)/100);
     }
 
-    public void calculaImpuesto(Empleado empleado){
+    public void impuestoRenta(Empleado empleado){
         if (empleado.getSueldo()>0 && empleado.getSueldo()<=5000){
             empleado.setImpuestoRenta(0);
         } else if (empleado.getSueldo()>5000&& empleado.getSueldo()<=10000) {

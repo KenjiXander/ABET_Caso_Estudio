@@ -24,7 +24,7 @@ public class Cola {
     public void cambiar(Empleado empleado, String nombre, double sueldo){
         empleado.setNombreEmpleado(nombre);
         empleado.setSueldo(sueldo);
-        empleado.calculaImpuesto(empleado);
+        empleado.impuestoRenta(empleado);
         empleado.aporteSeguro();
 
     }

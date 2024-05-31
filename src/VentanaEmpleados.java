@@ -52,7 +52,7 @@ public class VentanaEmpleados {
                 Empleado empleado = new Empleado(cedula, nombre, fechaIngreso, sueldo, 0, 0, 0);
 
                 empleado.aporteSeguro();
-                empleado.calculaImpuesto(empleado);
+                empleado.impuestoRenta(empleado);
                 empleado.calcularFondos();
 
                 empleados.add(empleado);
@@ -106,7 +106,7 @@ public class VentanaEmpleados {
                     empleadoEncontrado.setSueldo(nuevoSueldo);
 
                     empleadoEncontrado.aporteSeguro();
-                    empleadoEncontrado.calculaImpuesto(empleadoEncontrado);
+                    empleadoEncontrado.impuestoRenta(empleadoEncontrado);
                     empleadoEncontrado.calcularFondos();
 
                     JOptionPane.showMessageDialog(null, "Información del empleado ha sido modificada");
